@@ -9,6 +9,8 @@ public class Main {
         Dog dog = new Dog("Yorkie", 8, 20, 2, 4, 1, 20, "long silky");
         // Even though Dog class doesn't not have an 'eat' method, we can call this because we are extending from Animal Class
         dog.eat();
+        dog.walk();
+        dog.run();
 
     }
 }

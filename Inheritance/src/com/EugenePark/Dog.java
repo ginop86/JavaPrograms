@@ -37,6 +37,31 @@ public class Dog extends Animal{
         //this calls the original base (Animal) class method.
         super.eat();
     }
+
+    /*
+    * The reason why we don't want to use the keyword 'super'
+    * in the methods walk and run is because it would call the base (Animal) class instead of
+    * the override method.
+    * These methods would see if there was a move() method in the Dog class first and then check the base (Animal) class.
+    * If we called super.move() inside the method then, the override would not work.
+    * */
+
+    public void walk() {
+        System.out.println("Called from Dog class. Walk()");
+        move(5);
+    }
+
+    public void run() {
+        System.out.println("Called from Dog class. run()");
+        move(10);
+    }
+
+    @Override
+    public void move(int speed) {
+        System.out.println("Called from Dog class. Moving at " + speed + " speed.");
+        super.move(20);
+
+    }
 }
 
 
